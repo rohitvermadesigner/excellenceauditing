@@ -12,9 +12,20 @@ import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
+import { Roboto, Bebas_Neue } from 'next/font/google'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
+
+export const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+})
+
+export const bebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
+})
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -26,7 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
-      <body>
+      <body className={`${roboto.className}`}>
         <Providers>
           <AdminBar
             adminBarProps={{

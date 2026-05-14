@@ -1,5 +1,17 @@
-import PageTemplate, { generateMetadata } from './[slug]/page'
+// import PageTemplate, { generateMetadata } from './[slug]/page'
 
-export default PageTemplate
+import { AboutSection } from './components/AboutSection'
+import { HeroSection } from './components/HeroSection'
 
-export { generateMetadata }
+// export default PageTemplate
+
+// export { generateMetadata }
+
+export default function HomePage() {
+  return (
+    <>
+      <HeroSection />
+      <AboutSection />
+    </>
+  )
+}
