@@ -1,17 +1,10 @@
 'use client'
 import { FaEnvelope, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
-import style from './HeroSection.module.css'
 import Image from 'next/image'
-import { Bebas_Neue } from 'next/font/google'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, EffectFade } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
-
-export const bebasNeue = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-})
 
 export type Team = {
   name: string
@@ -64,8 +57,8 @@ export const teams: Team[] = [
 
 export const HeroSection = () => {
   return (
-    <section className={style.heroSection}>
-      <div className="relative container pt-8 md:pt-12">
+    <section className="bg-[url('/images/hero-banner.webp')] bg-cover bg-bottom bg-no-repeat">
+      <div className="relative container pt-8 md:pt-20">
         <div className="grid grid-cols-1 md:grid-cols-[50%_50%] gap-4 md:gap-8 items-center">
           <div className="text-white">
             <Image
@@ -75,7 +68,7 @@ export const HeroSection = () => {
               height={0}
               className="w-36 h-auto"
             />
-            <h1 className={`${bebasNeue.className} relative text-3xl md:text-7xl mt-5`}>
+            <h1 className={`font-bebas relative text-3xl md:text-7xl mt-5`}>
               Of Simplifying your Business with a<br /> Touch of Excellence
             </h1>
 

@@ -3,12 +3,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Bebas_Neue } from 'next/font/google'
-
-export const bebasNeue = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-})
 
 const services = [
   {
@@ -155,20 +149,18 @@ export const ServicesSection = () => {
 
   return (
     <section className="py-16 overflow-hidden bg-[#F8F9FF]">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className={`${bebasNeue.className} text-5xl text-[#373737] text-center`}>
-          OUR SERVICES
-        </h2>
+      <div className="container px-4">
+        <h2 className={`font-bebas text-5xl text-[#373737] text-center`}>OUR SERVICES</h2>
 
-        <div className="flex flex-wrap border-b border-gray-200 pb-4 mb-10 mt-10">
+        <div className="flex flex-wrap border border-gray-200 mb-10 mt-10">
           {services.map((service, index) => (
             <button
               key={service.id}
               onClick={() => setActiveTab(index)}
-              className={`px-5 py-3 text-sm md:text-base font-medium transition-all duration-300 cursor-pointer flex-1 ${
+              className={`px-4 py-3 text-sm md:text-base transition-all duration-300 cursor-pointer flex-1 ${
                 activeTab === index
                   ? 'bg-[#2E276B] text-white'
-                  : 'bg-white text-[#656565] hover:bg-gray-200'
+                  : 'bg-white text-[#656565] hover:bg-gray-200 border-r border-gray-200'
               }`}
             >
               {service.title}
@@ -179,9 +171,7 @@ export const ServicesSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Content */}
           <div className="lg:col-span-7">
-            <h2
-              className={`${bebasNeue.className} text-3xl md:text-4xl font-bold text-[#2E276B] mb-3`}
-            >
+            <h2 className={`font-bebas text-3xl md:text-4xl font-bold text-[#2E276B] mb-3`}>
               {services[activeTab].title}
             </h2>
 
@@ -205,15 +195,13 @@ export const ServicesSection = () => {
 
           {/* Right Image */}
           <div className="lg:col-span-5">
-            <div className="relative overflow-hidden rounded-3xl">
-              <Image
-                src={services[activeTab].image}
-                alt={services[activeTab].title}
-                width={600}
-                height={500}
-                className="w-full h-[350px] object-cover"
-              />
-            </div>
+            <Image
+              src={services[activeTab].image}
+              alt={services[activeTab].title}
+              width={600}
+              height={500}
+              className="w-full"
+            />
           </div>
         </div>
       </div>

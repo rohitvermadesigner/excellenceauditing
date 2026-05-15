@@ -1,11 +1,5 @@
 import Image from 'next/image'
-import { Bebas_Neue } from 'next/font/google'
 import Link from 'next/link'
-
-export const bebasNeue = Bebas_Neue({
-  subsets: ['latin'],
-  weight: ['400'],
-})
 
 export const AboutSection = () => {
   return (
@@ -13,7 +7,7 @@ export const AboutSection = () => {
       <div className="container py-10">
         <div className="flex items-center justify-center">
           <div className="flex-1">
-            <h2 className={`${bebasNeue.className} text-5xl text-[#373737]`}>About Us</h2>
+            <h2 className={`font-bebas text-5xl text-[#373737]`}>About Us</h2>
             <h3 className="text-2xl text-[#2E276B] font-medium mt-5">
               Trusted experts in audit,
               <br /> compliance and advisory.
